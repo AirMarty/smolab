@@ -15,5 +15,14 @@ Personal Small Home Lab - Containing configurations &amp; Services to setup
 
     packer --version
     Packer v1.11.2
+    packer init
+    packer plugins install github.com/hashicorp/proxmox
+    ...
+    packer validate -var-file=../credentials.pkr.hcl ./ubuntu-server-jammy.pkr.hcl
+    packer build -var-file=../credentials.pkr.hcl ./ubuntu-server-jammy.pkr.hcl
+
+   #Generate password 
+   openssl passwd -1 "password" 
+
 
 
