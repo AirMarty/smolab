@@ -1,0 +1,35 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: fr_FR
+  keyboard:
+    layout: fr
+  ssh:
+    install-server: true
+    allow-pw: true
+    disable_root: true
+    ssh_quiet_keygen: true
+    allow_public_ssh_keys: true
+  packages:
+    - qemu-guest-agent
+    - sudo
+    - curl
+    - wget
+  storage:
+    layout:
+      name: direct
+    swap:
+      size: 0
+  user-data:
+    package_upgrade: false
+    timezone: Europe/Paris
+    users:
+      - name: air
+        groups: [adm, sudo]
+        lock-passwd: false
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        passwd: $1$Rxkr.0fo$q8HUOVcliH9SuyWtRcwDk.
+        # - or -
+        ssh_authorized_keys:
+           - assh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHZpofrPjmiaa5IGRtiTimpTrnnw1fldZsuqpU0mVIt reg.marty@gmail.com

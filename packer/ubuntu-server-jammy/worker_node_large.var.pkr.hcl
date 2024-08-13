@@ -1,0 +1,7 @@
+node_type = "worker_node_large"
+cores = "4"
+memory = "8192"
+disk_size = "60G"
+disk_format = "raw"
+disk_type = "scsi"
+storage_pool = "local-lvm"

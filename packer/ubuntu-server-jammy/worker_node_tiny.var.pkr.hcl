@@ -1,0 +1,7 @@
+node_type = "worker_node_tiny"
+cores = "2"
+memory = "2048"
+disk_size = "30G"
+disk_format = "raw"
+disk_type = "scsi"
+storage_pool = "local-lvm"
